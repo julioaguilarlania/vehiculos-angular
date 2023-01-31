@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Vehiculo } from '../models/vehiculo.model';
 
 @Injectable({
@@ -25,7 +26,7 @@ export class VehiculosService {
 
   constructor() { }
 
-  getVehiculos():Vehiculo[] {
-    return this.listaVehiculos;
+  getVehiculos():Observable<Vehiculo[]> {
+    return of(this.listaVehiculos);
   }
 }

@@ -13,7 +13,9 @@
       <th>Placas</th>
     </thead>
     <tbody>
-      <tr *ngFor="let v of listaVehiculos">{{v.placas}}</tr>
+      <tr *ngFor="let v of listaVehiculos">
+        <td>{{ v.placas }}</td>
+      </tr>
     </tbody>
   </table>
 </div>

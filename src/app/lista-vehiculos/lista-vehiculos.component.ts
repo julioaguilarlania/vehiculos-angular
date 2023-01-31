@@ -18,7 +18,11 @@ export class ListaVehiculosComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('ngOnOnit()');
-    this.listaVehiculos = this.vsService.getVehiculos();
+    //this.listaVehiculos = this.vsService.getVehiculos();
+    this.vsService.getVehiculos().subscribe(
+      lista => {this.listaVehiculos = lista; console.log('trajo lista')}
+    );
+    console.log('Fin de ngOnInit')
   }
 
   toggleActivo():void {
