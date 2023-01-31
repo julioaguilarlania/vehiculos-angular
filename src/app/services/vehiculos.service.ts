@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Vehiculo } from '../models/vehiculo.model';
@@ -24,9 +25,16 @@ export class VehiculosService {
     },
   ];
 
-  constructor() { }
+  BACKEND_URL:string = 'http://localhost:8080';
+
+  constructor(private cliente:HttpClient) { }
 
   getVehiculos():Observable<Vehiculo[]> {
-    return of(this.listaVehiculos);
+//    return of(this.listaVehiculos);
+    return this.cliente.get<Vehiculo[]>(this.BACKEND_URL + '/vehiculos');
+  }
+
+  getVehiculoPorId(id:string):Observable<Vehiculo> {
+    return this.cliente.get<Vehiculo>(this.BACKEND_URL + '/vehiculos/' + id);
   }
 }
