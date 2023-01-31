@@ -1,1 +1,9 @@
-<p>lista-vehiculos works!</p>
+<div>{{ mensaje }}</div>
+<div *ngIf="activo">Componente activo</div>
+<div *ngIf="!activo">Componente inactivo</div>
+<button (click)="toggleActivo()">Cambiar</button>
+<div>
+  <ol>
+    <li *ngFor="let nombre of lista">{{nombre}}</li>
+  </ol>
+</div>
