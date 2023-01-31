@@ -8,10 +8,15 @@ import { VehiculosService } from '../services/vehiculos.service';
   styleUrls: ['./lista-vehiculos.component.css']
 })
 export class ListaVehiculosComponent implements OnInit {
-
+/*
   mensaje: string = "Hola mundo desde Angular";
   activo: boolean = true;
   lista: string[] = ["Fulano", "Mengano", "Perengano"];
+
+  toggleActivo():void {
+    this.activo = !this.activo;
+  }
+  */
   listaVehiculos: Vehiculo[] = [];
 
   constructor(private vsService:VehiculosService) { }
@@ -23,10 +28,6 @@ export class ListaVehiculosComponent implements OnInit {
       lista => {this.listaVehiculos = lista; console.log('trajo lista')}
     );
     console.log('Fin de ngOnInit')
-  }
-
-  toggleActivo():void {
-    this.activo = !this.activo;
   }
 
 }
