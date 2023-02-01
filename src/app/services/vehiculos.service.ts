@@ -26,16 +26,14 @@ export class VehiculosService {
     },
   ];
 
-  BACKEND_URL:string = environment.BACKEND_URL;
-
   constructor(private cliente:HttpClient) { }
 
   getVehiculos():Observable<Vehiculo[]> {
 //    return of(this.listaVehiculos);
-    return this.cliente.get<Vehiculo[]>(this.BACKEND_URL + '/vehiculos');
+    return this.cliente.get<Vehiculo[]>(environment.BACKEND_URL + '/vehiculos');
   }
 
   getVehiculoPorId(id:string):Observable<Vehiculo> {
-    return this.cliente.get<Vehiculo>(this.BACKEND_URL + '/vehiculos/' + id);
+    return this.cliente.get<Vehiculo>(environment.BACKEND_URL + '/vehiculos/' + id);
   }
 }

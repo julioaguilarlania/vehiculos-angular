@@ -25,9 +25,14 @@ export class ListaVehiculosComponent implements OnInit {
     console.log('ngOnOnit()');
     //this.listaVehiculos = this.vsService.getVehiculos();
     this.vsService.getVehiculos().subscribe(
-      lista => {this.listaVehiculos = lista; console.log('trajo lista')}
+      lista => {
+        this.listaVehiculos = lista;
+        console.log('trajo lista');
+        console.log(this.listaVehiculos);
+      }
     );
-    console.log('Fin de ngOnInit')
+    console.log(this.listaVehiculos);
+    console.log('Fin de ngOnInit');
   }
 
 }
