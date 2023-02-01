@@ -20,7 +20,7 @@
       <tr *ngFor="let v of listaVehiculos">
         <td>{{ v.placas }}</td>
         <td>{{ v.marca }} / {{ v.modelo }}</td>
-        <td><a [routerLink]="v.placas">Ver detalle</a></td>
+        <td><a [routerLink]="[v.placas]">Ver detalle</a></td>
       </tr>
     </tbody>
   </table>

@@ -1,0 +1,15 @@
+<h2>Clientes</h2>
+
+<table>
+  <thead>
+    <th>Nombre</th>
+    <th>CURP</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of clientes">
+      <td>{{c.nombre}}</td>
+      <td>{{c.curp}}</td>
+      <td><a [routerLink]="[c.clienteId]">Ver detalle</a></td>
+    </tr>
+  </tbody>
+</table>

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Vehiculo } from '../models/vehiculo.model';
 
 @Injectable({
@@ -25,7 +26,7 @@ export class VehiculosService {
     },
   ];
 
-  BACKEND_URL:string = 'http://localhost:8080';
+  BACKEND_URL:string = environment.BACKEND_URL;
 
   constructor(private cliente:HttpClient) { }
 
