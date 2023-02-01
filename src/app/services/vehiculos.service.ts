@@ -36,4 +36,10 @@ export class VehiculosService {
   getVehiculoPorId(id:string):Observable<Vehiculo> {
     return this.cliente.get<Vehiculo>(environment.BACKEND_URL + '/vehiculos/' + id);
   }
+
+  guardar(nuevoVehiculo: Vehiculo):Observable<Vehiculo> {
+    return this.cliente.post<Vehiculo>(
+      environment.BACKEND_URL + '/vehiculos',
+      nuevoVehiculo);
+  }
 }

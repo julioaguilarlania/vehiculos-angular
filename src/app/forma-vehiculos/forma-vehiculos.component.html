@@ -1,0 +1,37 @@
+<h2>Agregar Vehículo</h2>
+<div>
+  <table>
+    <tr>
+      <td>Placa:</td>
+      <td><input type="text" [(ngModel)]="nuevoVehiculo.placas"></td>
+    </tr>
+    <tr>
+      <td>Marca:</td>
+      <td><input type="text" [(ngModel)]="nuevoVehiculo.marca"></td>
+    </tr>
+    <tr>
+      <td>Modelo:</td>
+      <td><input type="text" [(ngModel)]="nuevoVehiculo.modelo"></td>
+    </tr>
+    <tr>
+      <td>Color:</td>
+      <td><input type="text" [(ngModel)]="nuevoVehiculo.color"></td>
+    </tr>
+    <tr>
+      <td>Kilometraje:</td>
+      <td><input type="number" [(ngModel)]="nuevoVehiculo.kilometraje"></td>
+    </tr>
+    <tr>
+      <td>Cliente:</td>
+      <td><select [(ngModel)]="clienteId">
+        <option value="0">Seleccionar...</option>
+        <option *ngFor="let c of listaClientes"
+        [value]="c.clienteId">{{c.nombre}}</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button (click)="agregarVehiculo()">Guardar</button></td>
+    </tr>
+  </table>
+</div>
