@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  //EJEMPLO
+  BACKEND_URL: 'http://backendspring:8080'
 };
