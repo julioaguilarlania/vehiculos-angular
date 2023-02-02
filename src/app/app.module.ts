@@ -8,7 +8,13 @@ import { ListaVehiculosComponent } from './lista-vehiculos/lista-vehiculos.compo
 import { DetalleVehiculoComponent } from './detalle-vehiculo/detalle-vehiculo.component';
 import { ListaClientesComponent } from './lista-clientes/lista-clientes.component';
 import { FormaVehiculosComponent } from './forma-vehiculos/forma-vehiculos.component';
-import { FormsModule } from '@angular/forms';
+import { FormaMaterialVehiculosComponent } from './forma-material-vehiculos/forma-material-vehiculos.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -16,13 +22,20 @@ import { FormsModule } from '@angular/forms';
     ListaVehiculosComponent,
     DetalleVehiculoComponent,
     ListaClientesComponent,
-    FormaVehiculosComponent
+    FormaVehiculosComponent,
+    FormaMaterialVehiculosComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

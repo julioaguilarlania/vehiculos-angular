@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DetalleVehiculoComponent } from './detalle-vehiculo/detalle-vehiculo.component';
+import { FormaMaterialVehiculosComponent } from './forma-material-vehiculos/forma-material-vehiculos.component';
 import { FormaVehiculosComponent } from './forma-vehiculos/forma-vehiculos.component';
 import { ListaClientesComponent } from './lista-clientes/lista-clientes.component';
 import { ListaVehiculosComponent } from './lista-vehiculos/lista-vehiculos.component';
@@ -12,6 +13,10 @@ const routes: Routes = [
   },
   {
     path:'vehiculos/create',
+    component: FormaMaterialVehiculosComponent
+  },
+  {
+    path:'vehiculos/oldcreate',
     component: FormaVehiculosComponent
   },
   {

@@ -1,0 +1,62 @@
+<h2>Nuevo Vehículo</h2>
+<div>
+  <form [formGroup]="formaVehiculo">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Placas:</mat-label>
+        <input type="text" matInput
+          formControlName="placas"
+          placeholder="AAA####">
+          <mat-error *ngIf="formaVehiculo.controls.placas?.errors">
+            {{getPlacasErrorMessage()}}
+          </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Marca:</mat-label>
+        <input type="text" matInput formControlName="marca">
+        <mat-error *ngIf="formaVehiculo.controls.marca?.errors">
+          {{getCadenaErrorMessage('marca')}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Modelo:</mat-label>
+        <input type="text" matInput formControlName="modelo">
+        <mat-error *ngIf="formaVehiculo.controls.modelo?.errors">
+          {{getCadenaErrorMessage('modelo')}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Color:</mat-label>
+        <input type="text" matInput formControlName="color">
+        <mat-error *ngIf="formaVehiculo.controls.color?.errors">
+          {{getCadenaErrorMessage('color')}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Kilometraje:</mat-label>
+        <input type="number" matInput formControlName="kilometraje">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Cliente:</mat-label>
+        <mat-select [(ngModel)]="clienteId"
+        [ngModelOptions]="{standalone: true}">
+          <mat-option value="0">Seleccionar...</mat-option>
+          <mat-option *ngFor="let c of listaClientes"
+          [value]="c.clienteId">{{c.nombre}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" [disabled]="formaVehiculo.invalid"
+        (click)="agregarVehiculo()">Guardar</button>
+    </div>
+  </form>
+  Status forma: {{ formaVehiculo.status }}
+</div>
