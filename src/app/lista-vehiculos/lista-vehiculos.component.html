@@ -9,9 +9,35 @@
   </ol>
 </div>
 -->
-<div>
-  <button [routerLink]="['create']">Agregar</button>
+<div style="text-align: right;">
+  <button mat-raised-button color="secondary" [routerLink]="['create']">Agregar</button>
 </div>
+
+<table mat-table [dataSource]="listaVehiculos" class="mat-elevation-z8">
+  <ng-container matColumnDef="placas">
+    <th mat-header-cell *matHeaderCellDef> Placas:  </th>
+    <td mat-cell *matCellDef="let c"> {{ c.placas }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="marca">
+    <th mat-header-cell *matHeaderCellDef> Marca:  </th>
+    <td mat-cell *matCellDef="let c"> {{ c.marca }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="modelo">
+    <th mat-header-cell *matHeaderCellDef> Modelo:  </th>
+    <td mat-cell *matCellDef="let c"> {{ c.modelo }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="color">
+    <th mat-header-cell *matHeaderCellDef> Color:  </th>
+    <td mat-cell *matCellDef="let c"> {{ c.color }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<!--
 <div>
   <table>
     <thead>
@@ -28,3 +54,4 @@
     </tbody>
   </table>
 </div>
+-->

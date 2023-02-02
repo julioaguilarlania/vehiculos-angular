@@ -8,6 +8,7 @@ import { VehiculosService } from '../services/vehiculos.service';
   styleUrls: ['./lista-vehiculos.component.css']
 })
 export class ListaVehiculosComponent implements OnInit {
+  displayedColumns: string[]=["placas","marca", "modelo", "color"];
 /*
   mensaje: string = "Hola mundo desde Angular";
   activo: boolean = true;
